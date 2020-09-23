@@ -3,9 +3,80 @@
 <html>
 <head>
 	<title>My social midia</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="login.css">
 </head>
 <body>
-	<h1> My social midia</h1>
+	<label for="username">Username</label>
+	<input id="username" name="username">
+	<label for="password">Password</label>
+	<input type="password" id="password" name="password">
+	<button onclick="cadastrarNovoUsuario()">Cadastrar novo Usuario</button>
+	<button onclick="entrar()">Entrar</button>
+	<button onclick="mostrarUsuario()">Mostrar Usúarios</button>
+
+	<script>
+		var usuarios = []
+
+		function cadastrarNovoUsuario(){
+			// pegar o que a pessoa digitou no input username
+			let username = document.getElementById("username").value
+			// pegar o que a pessoa digitou no input password
+			let password = document.getElementById("password").value
+
+			// verificar se o username digitado não é vazio
+			if(username===""){
+				//mostrar para o usuario que o username é invalido
+				alert("nome de usuario vazio")
+				//parar de executar minha função
+				return;
+			}
+			//verifcar se password digitada não é vazio
+			if(password === ""){
+				alert("senha vazia é invalida")
+				return;
+			}
+			// criar novo objeto de novo usuario
+			let newUsername = {username: username, password: password}
+
+			// salva novo usuario na lista
+			usuarios.push(newUsername)
+		}
+
+		function entrar(){
+			// pegar o que a pessoa digitou no input username
+			let username = document.getElementById("username").value
+			//pegar o que a pessoa digitou no input senha
+			let password = document.getElementById("password").value
+
+			// verificar se o nomeUsuario digitado nao é vazio
+           if(username===""){
+                // mostrar para o usuario que o nome de usuario é invalido
+                alert("nome de usuario vazio")
+                //parar de executar minha funcao
+                return;
+           }
+           // verificar se senha digitado nao é vazio
+           if(password === ""){
+               alert("senha vazia é invalida")
+               return;
+           } 
+           
+           // verifica se a primeira posicao da lista tem o nome de usuario e senha que foram digitados
+            
+            for(let i=0;i<usuarios.length; i++){
+            	if(usuarios[i]. username === username && usuarios[i].password === password ){
+            		alert("logado");
+            		return;
+            	}
+                // logado
+            }   
+        }
+
+		function mostrarUsuario(){
+			console.log(usuarios)
+		}
+	</script>
 </body>
 </html>>
 

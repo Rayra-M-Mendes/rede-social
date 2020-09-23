@@ -1,0 +1,33 @@
+.acesso {
+	background-color: #3b5998;
+	color: white;
+	padding-top: 13px;
+	padding-bottom: 13px;
+	padding-left: 660px;
+	padding-right: 140px;
+}
+.t-p {
+	font-size: 36px;
+	color: white;
+	float: left;
+	display: inline-block;
+	width: 100px;
+
+}
+main {
+	background-color: #ffffe0;
+}
+
+label{
+
+	color: red;
+}
+
+.imagem {
+	float: left;
+	display: inline;
+}
+
+.cadastro {
+	display: inline-block;
+}

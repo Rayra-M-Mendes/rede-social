@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+        <title>Facebook</title>
+        <link rel="stylesheet" type="text/css" href="reset.css">
+        <link rel="stylesheet" type="text/css" href="login.css">
+    </head>
+
+    <body>
+        <h1 class="t-p">Facebook</h1>
+        <div class="acesso">
+          <div style="display: inline-block;">
+            <p>Nome Usuario</p>
+            <input id="nomeUsuario" name="nomeUsuario"/>
+          </div>
+
+        <div style="display: inline-block;">
+          <p>Senha</p>
+          <input id="senha" name="senha"/>
+        </div>
+
+          <button onclick="entrar()">Entrar</button>
+        </div>
+        <main>
+          <div>
+             <img src="redesocial.jpg" alt="Facebook" width="660" height="400">
+          </div>
+        <script>
+            var usuarios = []
+
+            function cadastrarNovoUsuario(){
+               // pegar o que a pessoa digitou no input nomeUsuario
+               let nomeUsuario = document.getElementById("nomeUsuario").value
+               // pegar o que a pessoa digitou no input senha
+               let senha = document.getElementById("senha").value
+
+               // verificar se o nomeUsuario digitado nao é vazio
+               if(nomeUsuario===""){
+                    // mostrar para o usuario que o nome de usuario é invalido
+                    alert("nome de usuario vazio")
+                    //parar de executar minha funcao
+                    return;
+               }
+               // verificar se senha digitado nao é vazio
+               if(senha === ""){
+                   alert("senha vazia é invalida")
+                   return;
+               } 
+                // cria novo objecto do novo usuario
+                let novoUsuario = {nomeUsuario: nomeUsuario, senha: senha}
+
+                //salva novo usuario na lista
+                usuarios.push(novoUsuario)
+            }
+
+            function entrar(){
+               // pegar o que a pessoa digitou no input nomeUsuario
+               let nomeUsuario = document.getElementById("nomeUsuario").value
+               // pegar o que a pessoa digitou no input senha
+               let senha = document.getElementById("senha").value
+
+               // verificar se o nomeUsuario digitado nao é vazio
+               if(nomeUsuario===""){
+                    // mostrar para o usuario que o nome de usuario é invalido
+                    alert("nome de usuario vazio")
+                    //parar de executar minha funcao
+                    return;
+               }
+               // verificar se senha digitado nao é vazio
+               if(senha === ""){
+                   alert("senha vazia é invalida")
+                   return;
+               } 
+
+               // OBS: TRANSFORME ISSO EM UM FOR QUE VERIFICA SE O NOME DE USUARIO E SENHA DIGITADOS EXISTEM NA LISTA USUARIOS
+                for (let i = 0;i<usuarios.length; i++){
+                  // verifica se a primeira posicao da lista tem o nome de usuario e senha que foram digitados
+                if(usuario[i].nomeUsuario === nomeUsuario && usuarios[i].senha === senha){
+                    // logado
+                    alert("logado")
+                    //parar de executar a função
+                    return;
+                }
+             
+            }
+
+            function mostrarUsuario(){
+                console.log(usuarios)
+            }
+
+        </script>
+        <div class="cadastro">
+          <p>Criar uma nova conta </p>
+          <p>É rápido e fácil</p>
+
+           <label for="masculino">Masculino</label>
+          <input type="radio" id="feminino" name="genero" value="feminino">
+          <label for="feminino">Feminino</label>
+          <input type="radio" id="outros" name="genero" value="outros">
+          <label for="outros">Outros</label>
+        </div>
+    </body>
+
+  </html>
